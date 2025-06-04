@@ -29,7 +29,7 @@
 .idea/
 
 # Windows Forms designer files
-*.resx
+
 
 # NuGet
 *.nupkg
