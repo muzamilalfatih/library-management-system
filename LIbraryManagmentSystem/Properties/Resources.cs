@@ -1,0 +1,4 @@
+﻿namespace LIbraryManagmentSystem.Properties
+{
+    
+}
