@@ -31,15 +31,20 @@ namespace LIbraryManagmentSystem.Members
             _memberID = memberID;
             _Mode = enMode.Update;
         }
-        private void _FillMembershipClassesComboBox()
+        private bool _FillMembershipClassesComboBox()
         {
             DataTable dt = clsMembershipCalss.GetAllMembershipClassess();
-
-            foreach (DataRow dr in dt.Rows)
+            if (dt.Rows.Count > 0)
             {
-                cbMembershipClasess.Items.Add(dr[1]);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    cbMembershipClasess.Items.Add(dr[1]);
+                }
+                cbMembershipClasess.SelectedIndex = 0;
+                return true;
             }
-            cbMembershipClasess.SelectedIndex = 0;
+            return false;
+            
         }
         private void _LoadData()
         {
@@ -70,10 +75,13 @@ namespace LIbraryManagmentSystem.Members
 
             
         }
-        private void _ResetDefaultValues()
+        private bool _ResetDefaultValues()
         {
             
-            _FillMembershipClassesComboBox();
+            if (!_FillMembershipClassesComboBox())
+            {
+                return false;
+            }
             
             if (_Mode == enMode.Update)
             {
@@ -94,10 +102,16 @@ namespace LIbraryManagmentSystem.Members
                 this.Text = "Add New Member";
                 lblTitle.Text = "Add New Member";
             }
+            return true;
         }
         private void frmAddNewUpdateMember_Load(object sender, EventArgs e)
         {           
-            _ResetDefaultValues();
+            if (!_ResetDefaultValues())
+            {
+                this.Close();
+                MessageBox.Show("You can't add member without membershipclass", "Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
