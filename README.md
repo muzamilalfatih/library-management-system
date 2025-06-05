@@ -45,10 +45,6 @@ LibraryManagementSystem/
 - SQL Server installed and running
 - Access to SQL Server Management Studio (SSMS) or any SQL query tool
 
-### Project Database Setup
-This guide will help you set up the  database for the project.
-
-
 ### Installation
 
 1. Clone the repository  
