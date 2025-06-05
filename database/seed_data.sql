@@ -1,5 +1,5 @@
 
-use LMS
+use LibraryManagementSystem
 
 INSERT INTO People (NationalNo, FirstName, SecondName, ThirdName, LastName, Gender, Email, Phone, Address)
 VALUES ('admin01', 'Admin', 'Admin', NULL, 'Admin', 1, 'admin@example.com', '0000000000', 'HQ');
