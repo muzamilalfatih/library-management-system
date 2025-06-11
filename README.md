@@ -51,7 +51,6 @@ LibraryManagementSystem/
    git clone https://github.com/muzamilalfatih/library-management-system.git
 
 2. Steps to Set Up the Database
-
     1. Open the schema.sql and run it.
     2. Open the seed.sql and run it.
 
@@ -62,6 +61,10 @@ LibraryManagementSystem/
    Go to Tools > NuGet Package Manager > Manage NuGet Packages for Solution and restore missing packages.
 5. Build and run  
    Use Build > Build Solution and Debug > Start Debugging to launch the application.
+
+2. Use the following test credentials :
+    1. Username : admin
+    2. Password : admin
 
 ## Features
 
